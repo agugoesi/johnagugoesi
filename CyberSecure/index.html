@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CyberSecure Trainer</title>
+  <meta name="description" content="Password strength checker + Phishing awareness trainer" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Hidden signature 1 (visible only in source): agugoesi -->
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="logo">CS<span class="logo-dot">•</span>T</div>
+        <div class="title">CyberSecure Trainer</div>
+      </div>
+      <div class="profile" id="profileDisplay">Welcome — <span id="userNamePreview">Guest</span></div>
+    </header>
+
+    <main class="main-grid">
+      <!-- Left Column: Password -->
+      <section class="card" id="passwordCard">
+        <div class="card-head">
+          <h2>Password Strength Checker</h2>
+          <small class="muted">Live feedback & tips</small>
+        </div>
+
+        <div class="card-body">
+          <label class="label">Who is using this?</label>
+          <div class="row">
+            <input id="ownerInput" type="text" placeholder="Enter your name" />
+            <select id="usageSelect" title="What are you using this for?">
+              <option value="personal">Personal account</option>
+              <option value="school">School project / demo</option>
+              <option value="work">Work / corporate</option>
+              <option value="test">Testing / practice</option>
+            </select>
+          </div>
+
+          <label class="label">Enter a password</label>
+          <input id="password" type="password" placeholder="Type password..." autocomplete="new-password" />
+
+          <div class="meter">
+            <div id="meterBar" class="meter-bar"></div>
+          </div>
+          <p id="feedback" class="feedback">Strength: —</p>
+
+          <ul id="tips" class="tips"></ul>
+
+          <div class="card-foot">
+            <small class="muted">Tip: Use at least 12 characters, mix cases, numbers & symbols.</small>
+            <button id="generateBtn" class="btn-secondary">Generate strong password</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Right Column: Phishing -->
+      <section class="card" id="phishCard">
+        <div class="card-head">
+          <h2>Phishing Awareness Quiz</h2>
+          <small class="muted">Classify emails & learn red flags</small>
+        </div>
+
+        <div class="card-body">
+          <div id="emailBox" class="email-box" role="region" aria-live="polite"></div>
+
+          <div class="btn-row" style="margin-top:12px; display:flex; gap:8px;">
+            <button class="btn" id="realBtn">✅ Real</button>
+            <button class="btn" id="phishBtn">🚫 Phish</button>
+          </div>
+
+          <div id="explain" class="explain"></div>
+
+          <div class="score-row">
+            <div>Progress: <span id="progress">0 / 0</span></div>
+            <div>Correct: <span id="correctCount">0</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small>Created for Tech Innovation Club • Runs locally • Palette: white · silver · blue</small>
+      <div class="hidden-signs">
+        <!-- Hidden signature 2 (DOM hidden element) -->
+        <span id="hiddenSignature" style="display:none">agugoesi</span>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Hidden signature 3 (CSS pseudo-content) -->
+
+  <!-- Floating Action Button -->
+  <button id="fab" title="CyberSecure Scan" aria-label="CyberSecure tools">
+    🔍
+  </button>
+
+  <!-- Theme Picker -->
+  <div id="themePicker" aria-hidden="true">
+    <label for="themeSelect">Theme:</label>
+    <select id="themeSelect" aria-label="Select theme">
+      <option value="default">Default</option>
+      <option value="beautiful">Beautiful</option>
+      <option value="scary">Scary</option>
+      <option value="minimal">Minimal</option>
+      <option value="cyberpunk">Cyberpunk</option>
+      <option value="dark">Dark Hacker</option>
+      <option value="nature">Nature</option>
+      <option value="sunny">Sunny Light</option>
+      <option value="frost">Frost Blue</option>
+      <option value="violet">Violet Dream</option>
+      <option value="neon">Cyber Neon</option>
+      <option value="inferno">Inferno</option>
+      <option value="galaxy">Galaxy</option>
+    </select>
+  </div>
+
+  <!-- Local Argon2 (placeholder). Replace with real argon2.min.js if you have it -->
+  <script src="argon2.min.js"></script>
+  <!-- Main script (placed last so all DOM elements exist) -->
+  <script src="script.js"></script>
+</body>
+</html>
